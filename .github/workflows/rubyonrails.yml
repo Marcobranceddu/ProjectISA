@@ -40,7 +40,9 @@ jobs:
           bin/rails db:migrate
       # Add or replace test runners here
       - name: Run tests
-        run: bin/rake
+        run: |
+          chmod +x bin/rake
+          bin/rake
 
   lint:
     runs-on: ubuntu-latest
