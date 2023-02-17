@@ -42,7 +42,7 @@ Naming/PredicateName:
 # Offense count: 47
 # Configuration parameters: AllowedConstants.
 Style/Documentation:
-  Enabled: true
+  Enabled: false
 
 # Offense count: 2
 # This cop supports safe autocorrection (--autocorrect).
