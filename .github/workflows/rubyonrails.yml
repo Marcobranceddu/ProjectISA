@@ -55,8 +55,14 @@ jobs:
           bundler-cache: true
       # Add or replace any other lints here
       - name: Security audit dependencies
-        run: bundle exec bundle audit --update
+        run: |
+          chmod +x bundle exec bundle audit --update
+          bundle exec bundle audit --update
       - name: Security audit application code
-        run: bundle exec brakeman -q -w2
+        run: |
+          chmod +x bundle exec brakeman -q -w2
+          bundle exec brakeman -q -w2
       - name: Lint Ruby files
-        run: bundle exec rubocop --parallel
+        run: |
+          chmod +x bundle exec rubocop --parallel
+          bundle exec rubocop --parallel
