@@ -56,13 +56,13 @@ jobs:
       # Add or replace any other lints here
       - name: Security audit dependencies
         run: |
-          chmod +x bundle
+          chmod +x bundle exec bundle audit
           bundle exec bundle audit --update
       - name: Security audit application code
         run: |
-          chmod +x bundle
+          chmod +x bundle exec brakeman
           bundle exec brakeman -q -w2
       - name: Lint Ruby files
         run: |
-          chmod +x bundle 
+          chmod +x bundle exec rubocop
           bundle exec rubocop --parallel
