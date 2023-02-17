@@ -1,0 +1,14 @@
+<h1><%= @title %></h1>
+
+<div class="events-grid">
+  <% @events.each do |event| %>
+    <%= link_to event do %>
+      <div class="event-card">
+        <img src="<%= event.image %>">
+        <div>
+          <h3><%= event.name %></h3>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>

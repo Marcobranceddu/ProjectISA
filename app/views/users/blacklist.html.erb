@@ -1,0 +1,11 @@
+<div class="w-full">
+  <h1>Blacklist</h1>
+  <div class="list">
+    <% current_user.blacklisted_users.each do |user| %>
+      <div class="flex">
+        <p><%= user.email %></p>
+        <%= button_to "Remove", remove_from_blacklist_path(user), method: "delete" %>
+      </div>
+    <% end %>
+  </div>
+</div>

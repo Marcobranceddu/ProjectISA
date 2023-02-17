@@ -1,0 +1,4 @@
+<%= form_with(model: [@room, Chat::Message.new], class: "flex flex-row") do |f| %>
+  <%= f.text_field :content, class: "flex-grow block outline-none py-4 px-4" %>
+  <%= f.submit class: "button rounded-r-full m-2", "data-action": "click->chat#scroll" %>
+<% end %>

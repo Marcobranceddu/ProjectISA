@@ -1,0 +1,68 @@
+<h1>New Event</h1>
+
+<%= form_with model: @event do |form| %>
+
+  <div>
+    <%= form.label :image %>
+    <br>
+    <%= form.text_field :image %>
+    <% @event.errors.full_messages_for(:image).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :name %>
+    <br>
+    <%= form.text_field :name %>
+    <% @event.errors.full_messages_for(:name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :start_date %>
+    <br>
+    <%= form.datetime_local_field :start_date %>
+  </div>
+
+  <div>
+    <%= form.label :end_date %>
+    <br>
+    <%= form.datetime_local_field :end_date %>
+  </div>
+
+  <div>
+    <%= form.label :max_participants %>
+    <br>
+    <%= form.number_field :max_participants %>
+  </div>
+
+  <div>
+    <%= form.label :street %>
+    <br>
+    <%= form.text_field :street %>
+  </div>
+
+  <div>
+    <%= form.label :city %>
+    <br>
+    <%= form.text_field :city %>
+  </div>
+
+  <div>
+    <%= form.label :state %>
+    <br>
+    <%= form.text_field :state %>
+  </div>
+
+  <div>
+    <%= form.label :country %>
+    <br>
+    <%= form.text_field :country %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

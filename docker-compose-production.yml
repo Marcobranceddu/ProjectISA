@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  db:
+    image: postgres
+    volumes:
+      - ./tmp/db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: dbgpass
+  web:
+    environment:
+      RAILS_ENV: production
+    depends_on:
+      - db

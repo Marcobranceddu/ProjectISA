@@ -1,0 +1,22 @@
+default: &default
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  adapter: sqlite3
+  database: db/dbg_events_development.sqlite3
+
+test:
+  <<: *default
+  adapter: sqlite3
+  database: db/dbg_events_test.sqlite3
+
+production:
+  <<: *default
+  adapter: postgresql
+  host: db
+  username: postgres
+  password: dbgpass
+  database: dbg_events_production
+  # password: <%= ENV["DBG_EVENTS_DATABASE_PASSWORD"] %>

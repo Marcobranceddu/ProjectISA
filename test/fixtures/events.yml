@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  organizer_id: 1
+  name: MyString
+  start_date: "2022-12-01"
+  end_date: "2022-12-20"
+  max_participants: 12
+  street: "jksdbkjansdj"
+  city: "testing city"
+  state: "testing state"
+  country: "testing country"
+  latitude: 76.5627189
+  longitude: 76.5627189
+  image: "rtdfghjkl"

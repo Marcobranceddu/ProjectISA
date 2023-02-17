@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= @title %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+
+    <!-- Mapbox -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css' rel='stylesheet' />
+
+    <!-- Message styling (current_user not available in turbo streams) -->
+    <% if params[:controller] == 'chat/rooms' && params[:action] == 'show' %>
+      <style>
+        <%= ".from-#{current_user&.id}" %> {
+          text-align: right;
+        }
+
+        <%= ".from-#{current_user&.id}" %> > div {
+          color: white;
+          background-color: blue;
+        }
+
+        <%= ".from-#{current_user&.id}" %> > span {
+          padding-left: 0;
+          padding-right: 1rem;
+        }
+      </style>
+    <% end %>
+
+  </head>
+
+  <body>
+    <main class="container mx-auto flex flex-col">
+
+      <%= render "components/navbar" %>
+
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= yield %>
+    </main>
+  </body>
+</html>

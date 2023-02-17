@@ -1,0 +1,27 @@
+<section class="search">
+  <%= form_with url: root_path, method: :get do |form| %>
+    <%= form.text_field :query, placeholder: "Cerca per nome" %>
+    <%= form.text_field :query_city, placeholder: "Città" %>
+    <%= form.submit "Search" %>
+  <% end %>
+</section>
+
+<section class="py-8 flex flex-col">
+
+  <div class="flex justify-between">
+    <h2>Events</h2>
+  </div>
+
+  <div class="events-grid">
+    <% @events.each do |event| %>
+      <%= link_to event do %>
+        <div class="event-card">
+          <img src="<%= event.image %>">
+          <div>
+            <h3><%= event.name %></h3>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</section>

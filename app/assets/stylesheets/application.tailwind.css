@@ -1,0 +1,225 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Typography */
+h1 {
+  @apply text-3xl;
+}
+
+h2 {
+  @apply text-2xl;
+}
+
+/* Base */
+form {
+  @apply flex flex-col space-y-8;
+}
+
+.button {
+  @apply border py-2 px-4;
+}
+
+.button_to > button{
+  @apply mt-0 border py-2 px-4 !important;
+}
+
+.link {
+    @apply no-underline hover:text-black hover:underline py-2 px-4;
+}
+
+/* Navbar */
+.navbar {
+    @apply w-full mx-auto flex flex-wrap items-center justify-between px-6 py-3;
+}
+
+.navbar-logo {
+    @apply order-1 md:order-2;
+}
+
+.navbar-logo > a {
+    @apply flex items-center tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl;
+}
+
+.navbar-menu-left {
+    @apply hidden md:flex md:items-center md:w-auto w-full order-3 md:order-1;
+}
+
+.navbar-menu-left img, .navbar-menu-left > a {
+  @apply h-16;
+}
+
+.navbar-menu-right {
+    @apply order-2 md:order-3 flex items-center;
+}
+
+.navbar-menu-left > ul, .navbar-menu-right > ul {
+    @apply md:flex items-center justify-between text-base text-gray-700 pt-4 md:pt-0;
+}
+
+.navbar-menu-left > ul > li > a, .navbar-menu-right > ul > li > a {
+  @apply inline-block link;
+}
+
+.navbar-menu-right > div {
+  @apply pl-2;
+}
+
+/* Dropdown */
+.dropdown {
+    @apply inline-block relative;
+}
+
+.dropdown > button {
+    @apply py-2 rounded inline-flex items-center;
+}
+
+.dropdown > button > span {
+    @apply mr-1;
+}
+
+.dropdown > button > svg {
+    @apply fill-current h-4 w-4;
+}
+
+.dropdown ul {
+  @apply text-right absolute hidden pt-1 right-0 z-50 bg-white;
+}
+
+.dropdown:hover ul {
+  @apply block;
+}
+
+.dropdown ul > li {
+  @apply border-x;
+}
+
+.dropdown ul > li:first-child {
+  @apply border-t;
+}
+
+.dropdown ul > li:last-child {
+  @apply border-b;
+}
+
+.dropdown ul > li > a {
+  @apply link whitespace-nowrap;
+}
+
+.dropdown ul > li > div {
+  @apply w-64 text-sm flex justify-between p-2;
+}
+
+.dropdown ul > li > p {
+  @apply flex-shrink;
+}
+
+/* Notifications */
+#notifications-list {
+  @apply text-left;
+}
+
+/* Search */
+.search {
+  @apply w-full flex justify-center items-center h-64;
+}
+
+.search > form {
+  @apply flex flex-row items-center;
+}
+
+.search > form > input[type="text"] {
+  @apply p-0 pl-2 h-10 m-0;
+}
+
+.search > form > input[type="text"]:nth-child(2) {
+  @apply w-32;
+}
+
+.search > form > input[type="submit"] {
+  @apply bg-black text-white m-0 h-10 px-2;
+}
+
+/* Events Grid */
+.events-grid {
+    @apply grid grid-cols-3 grid-flow-row gap-8 my-8;
+}
+
+.event-card{
+    @apply aspect-w-4 aspect-h-3;
+}
+
+.event-card > img {
+    @apply w-full h-full object-cover object-center;
+}
+
+.event-card > div {
+    @apply flex flex-col justify-end p-4;
+}
+
+.event-card h3 {
+    @apply text-xl text-white;
+}
+
+/* Chat */
+.chat {
+  @apply w-full flex flex-col mt-8;
+}
+
+.chat > h1 {
+  @apply text-xl py-1 mb-8 border-b-2 border-gray-200;
+}
+
+#messages-list {
+  @apply flex flex-col overflow-y-scroll h-96;
+}
+
+.message {
+    @apply mb-4;
+}
+
+.message > div {
+  @apply inline-block bg-gray-300 rounded-full p-2 px-6 text-gray-700;
+}
+
+.message > span {
+  @apply block pl-4 text-gray-500 text-sm;
+}
+
+/* Events page */
+.event-image {
+  @apply w-full h-64 relative;
+}
+
+.event-image > img {
+  @apply w-full h-full object-cover object-center;
+}
+
+.event-title {
+  @apply w-full text-3xl font-semibold my-6;
+}
+
+.event-info {
+  @apply w-full flex justify-between;
+}
+
+.event-details {
+  @apply w-96 flex flex-col ml-12 border p-4 justify-between;
+}
+
+.event-details > div {
+  @apply flex flex-col;
+}
+
+/* List */
+.list {
+  @apply flex flex-col my-4 space-y-2;
+}
+
+.list > div {
+  @apply w-full flex flex-row justify-between border border-black p-4 items-center;
+}
+
+.list > div > div {
+  @apply flex;
+}
