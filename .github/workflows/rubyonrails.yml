@@ -42,7 +42,7 @@ jobs:
       - name: Run tests
         run: |
           chmod +x bin/rake
-          bin/rake
+          bin/rake test
 
   lint:
     runs-on: ubuntu-latest
