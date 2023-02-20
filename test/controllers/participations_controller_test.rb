@@ -79,7 +79,7 @@ class ParticipationsControllerTest < ActionDispatch::IntegrationTest
     event = Event.create(new_event)
     Participation.create(event_id: event.id, user_id: user.id)
     before = Participation.where(is_banned: true).count
-    put "/participations/#{event.id}"
+    put "/participations/#{participation.id}"
     after = Participation.where(is_banned: true).count
     logout(:user)
     assert_equal after, before + 1
