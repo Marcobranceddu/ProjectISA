@@ -36,13 +36,13 @@ jobs:
       # Add or replace database setup steps here
       - name: Set up database schema
         run: |
+          chmod +x bin/rake
+          bundle exec rake assets:precompile
           chmod +x bin/rails
           bin/rails db:migrate
       # Add or replace test runners here
       - name: Run tests
-        run: |
-          chmod +x bin/rake
-          bin/rake test
+        run: bin/rake test
 
   lint:
     runs-on: ubuntu-latest
