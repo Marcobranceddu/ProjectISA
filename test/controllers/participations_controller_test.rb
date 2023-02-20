@@ -77,7 +77,7 @@ class ParticipationsControllerTest < ActionDispatch::IntegrationTest
       longitude: 12.211213
     }
     event = Event.create(new_event)
-    Participation.create(event_id: event.id, user_id: user.id)
+    participation = Participation.create(event_id: event.id, user_id: user.id)
     before = Participation.where(is_banned: true).count
     put "/participations/#{participation.id}"
     after = Participation.where(is_banned: true).count
