@@ -30,9 +30,9 @@ env:
   AZURE_WEBAPP_NAME: dbg-events-webapp
 
 on:
-  push:
-    branches: [ "main" ]
-  workflow_dispatch:
+  workflow_run:
+    workflows: ["Ruby on Rails CI"]
+    types: [completed]
 
 permissions:
   contents: read
