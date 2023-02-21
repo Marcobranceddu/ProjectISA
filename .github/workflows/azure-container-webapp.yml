@@ -1,4 +1,4 @@
-# This workflow will build and push a Docker container to an Azure Web App when a commit is pushed to your default branch.
+# This workflow will build and push a Docker container to an Azure Web App when a commit is pushed to your default branch, and the tests are successfully passed.
 #.
 # This workflow assumes you have already created the target Azure App Service web app.
 # For instructions see https://docs.microsoft.com/en-us/azure/app-service/quickstart-custom-container?tabs=dotnet&pivots=container-linux
@@ -50,11 +50,11 @@ jobs:
         uses: docker/setup-buildx-action@v1
 
       - name: Log in to GitHub container registry
-        uses: docker/login-action@v1.10.0
+        #uses: docker/login-action@v1.10.0
         with:
           registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ github.token }}
+          username: Marcobranceddu
+          password: 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
 
       - name: Lowercase the repo name and username
         run: echo "REPO=${GITHUB_REPOSITORY,,}" >>${GITHUB_ENV}
