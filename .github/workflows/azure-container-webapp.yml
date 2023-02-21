@@ -38,9 +38,11 @@ permissions:
   contents: read
 
 jobs:
-  build:
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+on success:
+    build:
+    
       runs-on: ubuntu-latest
+      if: ${{ github.event.workflow_run.conclusion == 'success' }}
 
       steps:
         - uses: actions/checkout@v3
@@ -65,8 +67,8 @@ jobs:
             tags: ghcr.io/${{ env.REPO }}:${{ github.sha }}
             file: ./Dockerfile
 
-  deploy:
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    deploy:
+
       permissions:
         contents: none
       runs-on: ubuntu-latest
