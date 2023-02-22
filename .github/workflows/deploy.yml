@@ -26,7 +26,7 @@ jobs:
       - name: Build and Publish to Github Packages Registry
         uses: elgohr/Publish-Docker-Github-Action@master
         with:
-          name: Marcobranceddu/projectisa/dbgevents
+          name: marcobranceddu/projectisa/dbgevents
           registry: ghcr.io
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.GITHUB_TOKEN }}
@@ -46,7 +46,7 @@ jobs:
           envs: GITHUB_USERNAME, GITHUB_TOKEN
           script: |
             sudo docker login ghcr.io -u $GITHUB_USERNAME -p $GITHUB_TOKEN
-            sudo docker pull ghcr.io/Marcobranceddu/projectisa/dbgevents:latest
+            sudo docker pull ghcr.io/marcobranceddu/projectisa/dbgevents:latest
             sudo docker stop projectisa_web
             sudo docker system prune -f
-            sudo docker run --name projectisa_web -dit -p 3000:3000 ghcr.io/Marcobranceddu/projectisa/dbgevents:latest
+            sudo docker run --name projectisa_web -dit -p 3000:3000 ghcr.io/marcobranceddu/projectisa/dbgevents:latest
