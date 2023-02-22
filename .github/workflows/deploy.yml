@@ -33,7 +33,7 @@ jobs:
           dockerfile: Dockerfile
           tags: latest
 
-      - name: Deploy package to digitalocean
+      - name: Deploy package to Contabo
         uses: appleboy/ssh-action@master
         env:
           GITHUB_USERNAME: ${{ secrets.USERNAME }}
