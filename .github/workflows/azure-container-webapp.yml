@@ -44,10 +44,10 @@ jobs:
     steps:
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
-        uses: azure/webapps-deploy@v2x
+        uses: azure/webapps-deploy@v2
         with:
           app-name: ${{ env.AZURE_WEBAPP_NAME }}
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-          run_from_image: ghcr.io/${{ github.repository }}:${{ github.sha }}
+          run_from_image: ghcr.io/${{ env.REPO }}:${{ github.sha }}
           slot-name: 'production'
           # optional: to configure other app settings, add them as key-value pairs
