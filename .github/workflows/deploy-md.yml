@@ -34,4 +34,4 @@ jobs:
             cd ..
             sudo rm -rf ProjectISA
             sudo git clone https://github.com/Marcobranceddu/ProjectISA
-            cd ProjectISA && sudo docker-compose -f docker-compose.yml -f docker-compose-production.yml up -d --build
+            cd ProjectISA && sudo docker-compose up -d 
