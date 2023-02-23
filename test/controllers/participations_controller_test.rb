@@ -1,5 +1,7 @@
 # frozen_string_literal: true
+
 require 'test_helper'
+
 class ParticipationsControllerTest < ActionDispatch::IntegrationTest
   include Devise::Test::IntegrationHelpers
   include Warden::Test::Helpers
