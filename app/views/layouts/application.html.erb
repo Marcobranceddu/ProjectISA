@@ -36,7 +36,7 @@
   </head>
 
   <body>
-    <h1>Last site update: <%= Time.now.strftime("%d/%m/%Y %H:%M:%S") %></h1>
+    <h1>Last site update: <%= Time.now.strftime("%d/%m/%Y %H:%M:%S").freeze %></h1>
     <main class="container mx-auto flex flex-col">
 
       <%= render "components/navbar" %>
