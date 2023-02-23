@@ -9,4 +9,4 @@ class UserTest < ActiveSupport::TestCase
   #   assert event.save
   #  assert_equal organizer, event.organizer
   # end
-#end
+end
