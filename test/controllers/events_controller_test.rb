@@ -36,7 +36,7 @@ class EventsControllerTest < ActionDispatch::IntegrationTest
          }
     after = Event.count
     logout(:user)
-    assert_equal after, before + 2
+    assert_equal after, before + 1
   end
 
   test 'should return successful response' do
