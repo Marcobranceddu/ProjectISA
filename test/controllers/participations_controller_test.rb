@@ -15,10 +15,10 @@ class ParticipationsControllerTest < ActionDispatch::IntegrationTest
   #     start_date: '2023-01-01',
   #     end_date: '2022-10-02',
   #     max_participants: 12,
-  #     street: 'Viale Cavour 15',
-  #     city: 'Ferrara',
-  #     state: 'Emilia-Romagna',
-  #     country: 'Italy',
+  #     street: 'Gulberg III',
+  #     city: 'Lahore',
+  #     state: 'Punjab',
+  #     country: 'Pakistan',
   #     organizer_id: user.id,
   #     latitude: 12.211213,
   #     longitude: 12.211213
@@ -49,13 +49,13 @@ class ParticipationsControllerTest < ActionDispatch::IntegrationTest
       organizer_id: user.id,
       latitude: 12.211213,
       longitude: 12.211213
-      }
-      event = Event.create(new_event)
-      post "/events/#{event.id}/participations"
-      after = Participation.count
-      logout(:user)
-      assert_equal after, before + 1
-    end
+    }
+    event = Event.create(new_event)
+    post "/events/#{event.id}/participations"
+    after = Participation.count
+    logout(:user)
+    assert_equal after, before + 1
+  end
   test 'should update participation data' do
     user = FactoryBot.create(:user)
     login_as(user, scope: :user)
@@ -72,15 +72,15 @@ class ParticipationsControllerTest < ActionDispatch::IntegrationTest
       organizer_id: user.id,
       latitude: 12.211213,
       longitude: 12.211213
-      }
-      event = Event.create(new_event)
-      participation = Participation.create(event_id: event.id, user_id: user.id)
-      before = Participation.where(is_banned: true).count
-      put "/participations/#{participation.id}"
-      after = Participation.where(is_banned: true).count
-      logout(:user)
-      assert_equal after, before + 1
-    end
+    }
+    event = Event.create(new_event)
+    participation = Participation.create(event_id: event.id, user_id: user.id)
+    before = Participation.where(is_banned: true).count
+    put "/participations/#{participation.id}"
+    after = Participation.where(is_banned: true).count
+    logout(:user)
+    assert_equal after, before + 1
+  end
   test 'should delete participations' do
     user = FactoryBot.create(:user)
     login_as(user, scope: :user)
@@ -97,13 +97,13 @@ class ParticipationsControllerTest < ActionDispatch::IntegrationTest
       organizer_id: user.id,
       latitude: 12.211213,
       longitude: 12.211213
-      }
-      event = Event.create(new_event)
-      participtation = Participation.create(event_id: event.id, user_id: user.id)
-      before = Participation.count
-      delete "/participations/#{participtation.id}"
-      after  = Participation.count
-      logout(:user)
-      assert_equal after, before - 1
-    end
+    }
+    event = Event.create(new_event)
+    participtation = Participation.create(event_id: event.id, user_id: user.id)
+    before = Participation.count
+    delete "/participations/#{participtation.id}"
+    after  = Participation.count
+    logout(:user)
+    assert_equal after, before - 1
+  end
 end
