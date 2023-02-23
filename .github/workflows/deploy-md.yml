@@ -29,8 +29,9 @@ jobs:
           username: ${{ secrets.DEPLOY_USER }}
           key: ${{ secrets.DEPLOY_KEY }}
           script: |
-            sudo docker stop projectisa_web
-            sudo docker system prune -f
+            cd /home/md/ProjectISA
+            sudo docker-compose down
+            cd ..
             sudo rm -rf ProjectISA
             sudo git clone https://github.com/Marcobranceddu/ProjectISA
-            sudo cd ProjectISA && sudo docker-compose up -d
+            cd ProjectISA && sudo docker-compose up -d
