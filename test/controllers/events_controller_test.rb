@@ -20,12 +20,12 @@ class EventsControllerTest < ActionDispatch::IntegrationTest
       name: 'Event 1',
       image: 'URL',
       start_date: '2023-01-01',
-      end_date: '2022-10-02',
+      end_date: '2023-10-02',
       max_participants: 12,
-      street: 'Gulberg III',
-      city: 'Lahore',
-      state: 'Punjab',
-      country: 'Pakistan',
+      street: 'Viale Cavour 15',
+      city: 'Ferrara',
+      state: 'Emilia-Romagna',
+      country: 'Italy',
       organizer_id: 1,
       latitude: 12.211213,
       longitude: 12.211213
@@ -40,8 +40,8 @@ class EventsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should return successful response' do
-    created_event = Event.create({ name: 'Event 1', image: 'URL', start_date: '2023-01-01', end_date: '2022-10-02', max_participants: 12, street: 'Gulberg III', city: 'Lahore',
-                                   state: 'Punjab', country: 'Pakistan', organizer_id: 1, latitude: 12.211213, longitude: 12.211213 })
+    created_event = Event.create({ name: 'Event 1', image: 'URL', start_date: '2023-01-01', end_date: '2023-10-02', max_participants: 12, street: 'Viale Cavour 15', city: 'Ferrara',
+                                   state: 'Emilia-Romagna', country: 'Italy', organizer_id: 1, latitude: 12.211213, longitude: 12.211213 })
     get "/events/#{created_event.id}"
     assert_response :success
     assert_not_nil assigns(:events)
