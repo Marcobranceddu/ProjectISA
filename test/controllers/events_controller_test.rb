@@ -15,7 +15,7 @@ class EventsControllerTest < ActionDispatch::IntegrationTest
   test 'should create new event' do
     user = FactoryBot.create(:user)
     login_as(user, scope: :user)
-    before = Event.count # technically, eval("Post.count")
+    before = Event.count
     new_event = {
       name: 'Event 1',
       image: 'URL',
@@ -36,7 +36,7 @@ class EventsControllerTest < ActionDispatch::IntegrationTest
          }
     after = Event.count
     logout(:user)
-    assert_equal after, before + 2
+    assert_equal after, before + 1
   end
 
   test 'should return successful response' do
