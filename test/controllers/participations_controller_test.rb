@@ -9,7 +9,6 @@ class ParticipationsControllerTest < ActionDispatch::IntegrationTest
   # test 'should get index' do
   #   # user = FactoryBot.create(:user)
   #   # login_as(user, scope: :user)
-
   #   user = User.create(email: "user@example.com", password: 'password', is_organizer: true)
   #   new_event = {
   #     name: 'Event 1',
@@ -33,7 +32,7 @@ class ParticipationsControllerTest < ActionDispatch::IntegrationTest
   #   assert_response :success
   #   assert_not_nil assigns(:events)
   # end
-
+  
   test 'should create new event' do
     user = FactoryBot.create(:user)
     login_as(user, scope: :user)
