@@ -5,7 +5,6 @@ require 'test_helper'
 class ParticipationsControllerTest < ActionDispatch::IntegrationTest
   include Devise::Test::IntegrationHelpers
   include Warden::Test::Helpers
-  
   # test 'should get index' do
   #   # user = FactoryBot.create(:user)
   #   # login_as(user, scope: :user)
@@ -32,7 +31,6 @@ class ParticipationsControllerTest < ActionDispatch::IntegrationTest
   #   assert_response :success
   #   assert_not_nil assigns(:events)
   # end
-  
   test 'should create new event' do
     user = FactoryBot.create(:user)
     login_as(user, scope: :user)
